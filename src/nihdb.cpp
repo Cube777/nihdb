@@ -84,10 +84,7 @@ bool dataBase::ApplyChanges()
 	std::string lineRead;
 	for (int line = 0; line < _fileData.AmountOfLines(); line++) {
 		lineRead= _fileData.ReturnRawLine(line, _autoIndent);
-		if ((line + 1 < _fileData.AmountOfLines()) && (lineRead != "\n"))
-			fileWrite << lineRead << '\n';
-		else
-			fileWrite << lineRead;
+		fileWrite << lineRead << '\n';
 	}
 
 	return true;
